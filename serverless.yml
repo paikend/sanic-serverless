@@ -1,0 +1,35 @@
+service: sanic-serverless
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ap-northeast-2
+  stage: dev
+  versionFunctions: false
+  memorySize: 1024
+  timeout: 30
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+package:
+  exclude:
+    - node_modules/**
+    - v_py38/**
+    - .gitignore
+    # - .direnv/**
+
+
+functions:
+  app:
+    handler: run.handler
+    events:
+      - http: ANY /
+      - http:
+          path: /{proxy+}
+          method: ANY
+
+plugins:
+  - serverless-python-requirements
+
+

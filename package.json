@@ -1,0 +1,12 @@
+{
+  "name": "sanic-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.1.0"
+  },
+  "dependencies": {
+    "serverless": "^1.71.3"
+  }
+}
