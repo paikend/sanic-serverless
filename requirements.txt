@@ -21,4 +21,4 @@ typing-extensions==3.7.4.2
 ujson==2.0.3
 urllib3==1.25.9
 uvloop==0.14.0
-websockets==8
+websockets==9.1
